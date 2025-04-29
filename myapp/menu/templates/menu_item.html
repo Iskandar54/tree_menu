@@ -1,0 +1,12 @@
+<li>
+    <a href="{{ item.url_resolved }}" {% if item.active %}style="font-weight: bold;"{% endif %}>
+        {{ item.name }}
+    </a>
+    {% if item.children_items and item.open or item.children_items and item.active %}
+        <ul>
+            {% for child in item.children_items %}
+                {% include 'menu_item.html' with item=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

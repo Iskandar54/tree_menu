@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+<div class="menu">
+    <ul>
+        {% for item in tree %}
+            {% include 'menu_item.html' with item=item %}
+        {% endfor %}
+    </ul>
+</div>
